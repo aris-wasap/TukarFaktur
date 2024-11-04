@@ -46,15 +46,40 @@
     <Reference Include="SAPBusinessOneSDK" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Form1.b1f">
+    <Compile Include="FormRealisasi.b1f.cs">
+      <DependentUpon>FormRealisasi.b1f</DependentUpon>
+    </Compile>
+    <Compile Include="FormSetup.b1f.cs">
+      <DependentUpon>FormSetup.b1f</DependentUpon>
+    </Compile>
+    <Compile Include="Services\PenagihanOutlet\PenagihanOutlet.cs" />
+    <Compile Include="Services\Realisasi\Realisasi.cs" />
+    <Compile Include="Services\Setup\AddOnConfiguration.cs" />
+    <None Include="FormPenagihanOutlet.b1f">
       <FormCategory>UserForm</FormCategory>
     </None>
-    <Compile Include="Form1.b1f.cs">
-      <DependentUpon>Form1.b1f</DependentUpon>
+    <Compile Include="FormPenagihanOutlet.b1f.cs">
+      <DependentUpon>FormPenagihanOutlet.b1f</DependentUpon>
     </Compile>
+    <Compile Include="Global\Customize\CreateB1Db.cs" />
+    <Compile Include="Global\Customize\CreateFormatedSearch.cs" />
+    <Compile Include="Global\Customize\CreateLayout.cs" />
+    <Compile Include="Global\Customize\CreateScripts.cs" />
+    <Compile Include="Global\Customize\FormatedSearch.cs" />
+    <Compile Include="Global\Customize\Scripts.cs" />
+    <Compile Include="Global\Default\CleanUp.cs" />
+    <Compile Include="Global\Default\GetServices.cs" />
+    <Compile Include="Global\Default\Mode.cs" />
+    <Compile Include="Global\Default\UserDefined.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="FormRealisasi.b1f">
+      <FormCategory>UserForm</FormCategory>
+    </None>
+    <None Include="FormSetup.b1f">
+      <FormCategory>UserForm</FormCategory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

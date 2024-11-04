@@ -4,8 +4,16 @@ using System.Collections.Generic;
 
 namespace TukarFaktur
 {
-    class Program
+    public class Program
     {
+        public static SAPbobsCOM.BoDataServerTypes boDataServerTypes;
+        public static string DatabaseId;
+        public static string DatabaseName;
+        public static string MethodProcedure;
+        public static SAPbouiCOM.Application oApplication;
+        public static SAPbobsCOM.Company oCompany;
+        public static int UserId;
+        public static string UserName;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -25,6 +33,19 @@ namespace TukarFaktur
                     //oApp = new Application(args[0], "XXXXX");
                     oApp = new Application(args[0]);
                 }
+
+                oApplication = SAPbouiCOM.Framework.Application.SBO_Application;
+                oCompany = (SAPbobsCOM.Company)oApplication.Company.GetDICompany();
+                boDataServerTypes = oCompany.DbServerType;
+                UserName = oCompany.UserName;
+                UserId = oCompany.UserSignature;
+                DatabaseName = oCompany.CompanyDB;
+                DatabaseId = oCompany.CompanyID;
+                if (boDataServerTypes == SAPbobsCOM.BoDataServerTypes.dst_HANADB)
+                {
+                    MethodProcedure = "CALL";
+                }
+
                 Menu MyMenu = new Menu();
                 MyMenu.AddMenuItems();
                 oApp.RegisterMenuEventHandler(MyMenu.SBO_Application_MenuEvent);

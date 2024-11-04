@@ -1,14 +1,15 @@
 ﻿using SAPbouiCOM.Framework;
 using System;
 using System.Collections.Generic;
-using System.Xml;
+using System.Linq;
+using System.Text;
 
 namespace TukarFaktur
 {
-    [FormAttribute("TukarFaktur.Form1", "Form1.b1f")]
-    class Form1 : UserFormBase
+    [FormAttribute("TukarFaktur.FormSetup", "FormSetup.b1f")]
+    class FormSetup : UserFormBase
     {
-        public Form1()
+        public FormSetup()
         {
         }
 
