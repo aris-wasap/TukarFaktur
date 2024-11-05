@@ -8,9 +8,9 @@
         private static string QueryCategory = "Tukar Faktur";
         private static string QuerySelect = "";
 
-        public static void Add()
+        public static void Add(string AddOnName)
         {
-            if (GetServices.GetCreateFms("Tukar Faktur") != "N")
+            if (GetServices.GetCreateFms(AddOnName) != "N")
             {
                 Collector("Tukar Faktur - Get List Collector", "TukarFaktur.FormPenagihanOutlet", "txtBranch", "-1");
                 Rayon("Tukar Faktur - Get List Rayon", "TukarFaktur.FormPenagihanOutlet", "txtSearch", "-1");

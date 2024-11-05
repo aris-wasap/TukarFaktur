@@ -11,6 +11,8 @@ namespace TukarFaktur
     {
         public FormSetup()
         {
+            SAPbouiCOM.Framework.Application.SBO_Application.Menus.Item("1289").Activate();
+            this.Matrix0.AutoResizeColumns();
         }
 
         /// <summary>
@@ -18,6 +20,12 @@ namespace TukarFaktur
         /// </summary>
         public override void OnInitializeComponent()
         {
+            this.EditText0 = ((SAPbouiCOM.EditText)(this.GetItem("txtCode").Specific));
+            this.Button0 = ((SAPbouiCOM.Button)(this.GetItem("1").Specific));
+            this.Folder0 = ((SAPbouiCOM.Folder)(this.GetItem("Item_3").Specific));
+            this.Matrix0 = ((SAPbouiCOM.Matrix)(this.GetItem("mtx").Specific));
+            this.OnCustomInitialize();
+
         }
 
         /// <summary>
@@ -26,5 +34,16 @@ namespace TukarFaktur
         public override void OnInitializeFormEvents()
         {
         }
+
+        private SAPbouiCOM.EditText EditText0;
+
+        private void OnCustomInitialize()
+        {
+
+        }
+
+        private SAPbouiCOM.Button Button0;
+        private SAPbouiCOM.Folder Folder0;
+        private SAPbouiCOM.Matrix Matrix0;
     }
 }

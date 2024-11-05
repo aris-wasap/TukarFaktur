@@ -11,7 +11,7 @@
     {
         public static void AddLayout(string MenuId, string TypeName, string AddOnName, string AddOnFormType, string LayoutName, string RptFileName)
         {
-            if (GetServices.GetCreateLayout("Tukar Faktur") != "N")
+            if (GetServices.GetCreateLayout(AddOnName) != "N")
             {
                 ReportType dataInterface;
                 int num;

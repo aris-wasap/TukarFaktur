@@ -8,9 +8,9 @@
 
     internal class CreateB1Db
     {
-        public static void Create()
+        public static void Create(string AddOnName)
         {
-            if (GetServices.GetCreateUdo("Tukar Faktur") != "N")
+            if (GetServices.GetCreateUdo(AddOnName) != "N")
             {
                 Tables();
                 Fields();

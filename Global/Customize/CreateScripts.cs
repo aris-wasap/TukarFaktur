@@ -5,9 +5,9 @@
 
     public class CreateScripts
     {
-        public static void AllScripts()
+        public static void AllScripts(string AddOnName)
         {
-            if (GetServices.GetCreateStoreProcedure("Tukar Faktur") != "N")
+            if (GetServices.GetCreateStoreProcedure(AddOnName) != "N")
             {
                 Scripts.CreateSP(Mode.QueryMode.qProcedures, "__TukarFaktur_GetDaftarPenagihanOutlet");
                 Scripts.CreateSP(Mode.QueryMode.qProcedures, "__TukarFaktur_GetInvoices");

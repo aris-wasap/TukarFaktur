@@ -13,6 +13,7 @@ namespace TukarFaktur
         {
             SAPbouiCOM.Menus oMenus = null;
             SAPbouiCOM.MenuItem oMenuItem = null;
+            string AddOnName = "Tukar Faktur";
 
             oMenus = Application.SBO_Application.Menus;
 
@@ -31,7 +32,7 @@ namespace TukarFaktur
 
             oCreationPackage.Type = SAPbouiCOM.BoMenuType.mt_POPUP;
             oCreationPackage.UniqueID = "TukarFaktur";
-            oCreationPackage.String = "TukarFaktur";
+            oCreationPackage.String = "Tukar Faktur";
             oCreationPackage.Enabled = true;
             oCreationPackage.Position = -1;
 
@@ -75,25 +76,25 @@ namespace TukarFaktur
                 //1
                 Application.SBO_Application.StatusBar.SetText("1. Create Menu Add-On Configuration successfully.", SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Success);
 
-                //2
+                //2 By Pass
                 CreateB1Db.CreateDbSetup();
                 Application.SBO_Application.StatusBar.SetText("2. Create UDO Add-On Configuration successfully.", SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Success);
 
                 //3
-                CreateB1Db.Create();
+                CreateB1Db.Create(AddOnName);
                 Application.SBO_Application.StatusBar.SetText("3. Create UDO Add-On Tukar Faktur successfully.", SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Success);
 
                 //4
-                CreateFormatedSearch.Add();
+                CreateFormatedSearch.Add(AddOnName);
                 Application.SBO_Application.StatusBar.SetText("4. Create FMS Add-On Tukar Faktur successfully.", SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Success);
 
                 //5
-                CreateLayout.AddLayout("TukarFaktur.FormPenagihanOutlet", "Daftar Penagihan Outlet", "Tukar Faktur", "TukarFaktur.FormPenagihanOutlet", "Layout Penagihan Outlet", "DaftarPenagihanOutlet.rpt");
-                CreateLayout.AddLayout("TukarFaktur.FormRealisasi", "Realisasi Penagihan Outlet", "Tukar Faktur", "TukarFaktur.FormRealisasi", "Layout Realisasi", "RealisasiPenagihanOutlet.rpt");
+                CreateLayout.AddLayout("TukarFaktur.FormPenagihanOutlet", "Daftar Penagihan Outlet", AddOnName, "TukarFaktur.FormPenagihanOutlet", "Layout Penagihan Outlet", "DaftarPenagihanOutlet.rpt");
+                CreateLayout.AddLayout("TukarFaktur.FormRealisasi", "Realisasi Penagihan Outlet", AddOnName, "TukarFaktur.FormRealisasi", "Layout Realisasi", "RealisasiPenagihanOutlet.rpt");
                 Application.SBO_Application.StatusBar.SetText("5. Create Layout Add-On Tukar Faktur successfully.", SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Success);
 
                 //6
-                CreateScripts.AllScripts();
+                CreateScripts.AllScripts(AddOnName);
                 Application.SBO_Application.StatusBar.SetText("6. Create Scripts Add-On Tukar Faktur successfully.", SAPbouiCOM.BoMessageTime.bmt_Short, SAPbouiCOM.BoStatusBarMessageType.smt_Success);
 
                 //7
